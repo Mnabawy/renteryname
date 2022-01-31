@@ -1,27 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const PersonData = styled.div`
   width: 60%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   margin: auto;
   border: 1px solid lightgray;
-  padding-left: 10px;
-  margin-top: 10px;
+  border-bottom: 1px solid white;
+`;
+
+const Conatainer = styled.div`
+  background-color: lightgray;
+  width: 60%;
+  margin: auto;
   border-radius: 50px;
 `;
 
 function PersonList(props) {
   return (
-    <div>
+    <Conatainer>
       {props.items.map(person => (
-        <Container key={person.id}>
+        <PersonData key={person.id}>
           <h1>{person.name}</h1>
           <h1> ( {person.age} years old )</h1>
-        </Container>
+        </PersonData>
       ))}
-    </div>
+    </Conatainer>
   );
 }
 
